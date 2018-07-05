@@ -8,8 +8,8 @@ const passport = require('passport')
 const User = require('./../../models/User')
 
 //Load input validation
-const validateRegisterInput = require('./../../validation/register')
-const validateLoginInput = require('./../../validation/login')
+const validateRegisterInput = require('../../validation/user/register')
+const validateLoginInput = require('../../validation/user/login')
 
 router.get('/test', (req, res) => res.json({msg: 'hello user'}))
 router.post('/register', (req, res) => {
