@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
-import axios from 'axios'
 import classnames from 'classname'
+import {connect} from 'react-redux'
+import PropsType from 'prop-types'
+// import registerUser from './../../reduucers/authReducer'
+import {registerUser} from './../../actions/authActions'
+import axios from "axios/index";
 class Register extends Component {
   constructor(){
     super()
@@ -12,6 +16,12 @@ class Register extends Component {
       errors: {}
     }
   }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.errors) {
+      this.setState({errors: nextProps.errors})
+    }
+  }
   onSubmit = (e) => {
     e.preventDefault()
     const {name, email, password, password2} = this.state
@@ -21,9 +31,11 @@ class Register extends Component {
       password: password,
       password2: password2
     }
+    // console.log(this.props.registerUser)
     axios.post('api/users/register', newUser)
       .then(res => console.log(res.data))
       .catch(err => this.setState({errors: err.response.data}))
+    // this.props.registerUser(newUser)
   }
 
   onChangeInput = (e) => {
@@ -41,7 +53,7 @@ class Register extends Component {
             <div className='col-md-8 m-auto'>
               <h1 className='display-4 text-center '> Sign Up</h1>
               <p className='lead text-center'> Create your account</p>
-              <form onSubmit={this.onSubmit}>
+              <form noValidate onSubmit={this.onSubmit}>
                 <div className='form-group'>
                   <input
                    type='text'
@@ -106,4 +118,15 @@ class Register extends Component {
     )
   }
 }
-export default Register
+
+Register.propType = {
+  registerUser : PropsType.func.isRequired,
+  auth: PropsType.object.isRequired,
+  errors: PropsType.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+export default connect(mapStateToProps, {registerUser})(Register)
