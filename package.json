@@ -6,7 +6,7 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "server": "node server.js",
-    "client": "PORT=3000 npm start --prefix client",
+    "client": "PORT=3000 npm start --prefix client  && npm install",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "rohit",
