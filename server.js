@@ -5,6 +5,7 @@ const posts = require('./routes/api/posts')
 const profile = require('./routes/api/profile')
 const bodyParser = require('body-parser')
 const passport = require('passport')
+const path = require('path')
 
 const app = express();
 
