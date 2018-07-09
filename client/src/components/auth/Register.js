@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import classnames from 'classname'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
@@ -18,6 +18,7 @@ class Register extends Component {
   }
 
   componentDidMount() {
+    debugger
     if (this.props.auth.isAuthenticated) {
       this.props.history.push('/dashboard')
     }

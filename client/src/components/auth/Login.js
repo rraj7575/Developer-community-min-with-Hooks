@@ -16,8 +16,10 @@ class Login extends Component {
   }
 
   componentDidMount() {
-
+    debugger
     if (this.props.auth.isAuthenticated) {
+      debugger
+      console.log('in login componentDidMount')
       this.props.history.push('/dashboard')
     }
   }
@@ -25,6 +27,7 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated){
       console.log('in login componentwillreiveProps')
+      debugger
       this.props.history.push('/dashboard')
     }
     if (nextProps.errors) {

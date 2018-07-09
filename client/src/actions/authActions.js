@@ -50,7 +50,7 @@ export const setCurrentUser = userData => {
 }
 
 //
-export const logoutUser = () => dispatch => {
+export const logoutUser = dispatch => {
   //Remove token from local storage
   return{
     onLogout: () => {

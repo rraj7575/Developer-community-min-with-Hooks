@@ -30,7 +30,6 @@ if (localStorage.jwtToken) {
   }
   setAuthToken(localStorage.jwtToken)
   store.dispatch(setCurrentUser(decodedData))
-
 }
 
 class App extends Component {
