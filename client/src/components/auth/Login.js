@@ -16,18 +16,13 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    debugger
     if (this.props.auth.isAuthenticated) {
-      debugger
-      console.log('in login componentDidMount')
       this.props.history.push('/dashboard')
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated){
-      console.log('in login componentwillreiveProps')
-      debugger
       this.props.history.push('/dashboard')
     }
     if (nextProps.errors) {
@@ -52,7 +47,6 @@ class Login extends Component {
   showErrors = (err) => (<div className='invalid-feedback'> {err}</div>)
 
   render(){
-    console.log('in login')
     const {errors} = this.state
     return(
      <div className='login'>

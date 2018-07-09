@@ -5,14 +5,7 @@ import {connect} from 'react-redux'
 import {logoutUser} from './../../actions/authActions'
 
 class Navbar extends Component {
-  constructor(props){
-    super(props)
-  }
-  componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      window.location.href = '/dashboard'
-    }
-  }
+
   onLogout = (e) => {
     e.preventDefault()
     this.props.onLogout()
