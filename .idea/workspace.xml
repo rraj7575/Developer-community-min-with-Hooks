@@ -3,7 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="f35a42a7-94d6-44e3-878d-6e00aab9b138" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/026c50dee42ef5acfc1eca4e2b1d0d4822979dfd.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/0365ac808a2adb03d2e81240e80d4d4c0649e673.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/0f30bf9814a6f7399eab1ff4277a68445c0f2b21.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/11bc1d5992ea56a878dca99e2175ebdb4c3e35fb.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/1f560eae0ea8d5e6eb1822b31fd7f4cc0a22ce31.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/2ab63b73faac7a45b7b6d80be8aa4b2b33b26cba.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/48c64385eaf5676ab31d436cb73befd6ca9736ab.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/4cf266999b154e0417f9192411ace1e79d65c2e4.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/7003fe8184248c575ad5f630f649ff1a821ba6df.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/94867a522cecba32afd73d19cde6b2ed416c6745.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/97f57e2523c514d12e6964b4a340a8345d277246.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/c57727718f573a95e0cebb7b436f6a52b0783635.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/c60bab6a206d4b2377245adb9681733e3b2b18f4.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/cdfeb8d0dca9a7838fba5c40e8bb2ef929d03ec7.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/d452e4439803065c5701e0804aa074dd6b118ebf.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/d689f637c1d0474aac4d6a62885157a6723b62f6.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/d9a2f500001aca6d5b2382d5f62be2de484d54b5.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/e5217b78288b8bee0f6b41b5fc38525110112cae.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/babel-loader/f968a728268657b6af922ae26862cd9550a0a6cc.json.gz" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/hash.js/lib/hash.d.ts" afterPath="$PROJECT_DIR$/client/node_modules/hash.js/lib/hash.d.ts" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/hash.js/package.json" afterPath="$PROJECT_DIR$/client/node_modules/hash.js/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/node_modules/inherits/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +41,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="30">
+              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -47,18 +68,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="path.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/path/path.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,8 +81,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -326,11 +335,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170570000" />
+    <option name="totallyTimeSpent" value="171431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.503125" order="13" side_tool="true" content_ui="tabs" />
@@ -339,7 +347,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28175896" sideWeight="0.496875" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1556791" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1556791" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -696,22 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/key_prod.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -756,9 +748,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -770,10 +768,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="255">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>
