@@ -36,7 +36,9 @@ if (process.env.NODE_ENV === 'production') {
   console.log('in production')
   app.use(express.static('client/build'))
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__filename, 'client', 'build', 'index.html'))
+    const index = path.join(__dirname, 'client', 'build', 'index.html');
+    res.sendFile(index);
+    // res.sendFile(path.resolve(__filename, 'client', 'build', 'index.html'))
   })
 }
 
