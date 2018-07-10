@@ -10,7 +10,8 @@
     "client-local": "PORT=3000 npm start --prefix client",
     "client": "PORT=3000 npm run build --prefix client",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "dev": "concurrently \"npm run local\" \"npm run client-local\""
+    "dev": "concurrently \"npm run local\" \"npm run client-local\"",
+    "heroku-postbuid" : "cross-env NODE_ENV=production"
   },
   "author": "rohit",
   "license": "MIT",
