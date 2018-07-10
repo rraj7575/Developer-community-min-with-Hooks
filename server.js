@@ -30,6 +30,7 @@ app.use('/api/users', users)
 app.use('/api/posts', posts)
 app.use('/api/profile', profile)
 //Server static assets if in production
+
 if (process.env.NODE_ENV === 'production') {
   //Set static folder
   console.log(process.env.NODE_ENV)
@@ -38,6 +39,8 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__filename, 'client', 'build', 'index.html'))
   })
+} else {
+  console.log('dev')
 }
 
 
