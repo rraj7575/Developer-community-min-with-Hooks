@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
-import classnames from 'classname'
 import {loginUser} from './../../actions/authActions'
-
+import TextFieldGroup from './../common/TextFieldGroup'
 
 class Login extends Component {
   constructor(props){
@@ -47,7 +46,7 @@ class Login extends Component {
   showErrors = (err) => (<div className='invalid-feedback'> {err}</div>)
 
   render(){
-    const {errors} = this.state
+    const {errors, email, password} = this.state
     return(
      <div className='login'>
        <div className='container'>
@@ -56,30 +55,22 @@ class Login extends Component {
              <h1 className='display-4 text-center'>Log In</h1>
              <p className='lead text-center'> Sign in to your account</p>
              <form noValidate onSubmit={this.onSubmit}>
-               <div className='form-gropu'>
-                 <input
-                   type='email'
-                   className={classnames('form-control form-control-lg', {
-                     'is-invalid': errors.email
-                   })}
-                   placeholder='Email Address'
-                   name='email'
-                   onChange={this.onChangeInput}
-                 />
-                 {errors.email && this.showErrors(errors.email)}
-               </div>
-               <div className='form-group'>
-                 <input
-                   type='password'
-                   className={classnames('form-control form-control-lg', {
-                     'is-invalid': errors.password
-                   })}
-                   placeholder='Password'
-                   name='password'
-                   onChange={this.onChangeInput}
-                 />
-                 {errors.password && this.showErrors(errors.password)}
-               </div>
+               <TextFieldGroup
+                 placeholder='Email Address'
+                 name='email'
+                 value={email}
+                 onChange={this.onChangeInput}
+                 type='email'
+                 error={errors.email}
+               />
+               <TextFieldGroup
+                 placeholder='Password'
+                 name='password'
+                 value={password}
+                 onChange={this.onChangeInput}
+                 type='password'
+                 error={errors.password}
+               />
                <input
                  type='submit'
                  className='btn btn-info btn-block mt-4'

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom'
 import {registerUser} from './../../actions/authActions'
+import TextFieldGroup from './../common/TextFieldGroup'
 
 class Register extends Component {
   constructor(props){
@@ -56,58 +57,37 @@ class Register extends Component {
               <h1 className='display-4 text-center '> Sign Up</h1>
               <p className='lead text-center'> Create your account</p>
               <form noValidate onSubmit={this.onSubmit}>
-                <div className='form-group'>
-                  <input
-                   type='text'
-                   className={classnames('form-control form-control-lg', {
-                     'is-invalid': errors.name
-                   })}
-                   placeholder='Name'
-                   name='name'
-                   value={name}
-                   onChange={this.onChangeInput}
-                  />
-                  {errors.name && this.showErrors(errors.name)}
-                </div>
-                <div className='form-group'>
-                  <input
-                    type='email'
-                    className={classnames('form-control form-control-lg', {
-                      'is-invalid': errors.email
-                    })}
-                    placeholder='Email Address'
-                    name='email'
-                    value={email}
-                    onChange={this.onChangeInput}
-                  />
-                  {errors.email && this.showErrors(errors.email)}
-                </div>
-                <div className='form-group'>
-                  <input
-                    type='password'
-                    className={classnames('form-control form-control-lg', {
-                      'is-invalid': errors.password
-                    })}
-                    placeholder='Password'
-                    name='password'
-                    value={password}
-                    onChange={this.onChangeInput}
-                  />
-                  {errors.password && this.showErrors(errors.password)}
-                </div>
-                <div className='form-group'>
-                  <input
-                    type='password'
-                    className={classnames('form-control form-control-lg', {
-                      'is-invalid': errors.password2
-                    })}
-                    placeholder='Confirm Password'
-                    name='password2'
-                    value={password2}
-                    onChange={this.onChangeInput}
-                  />
-                  {errors.password2 && this.showErrors(errors.password2)}
-                </div>
+                <TextFieldGroup
+                  placeholder='Name'
+                  name='name'
+                  value={name}
+                  onChange={this.onChangeInput}
+                  error={errors.name}
+                />
+                <TextFieldGroup
+                  placeholder='Email Address'
+                  name='email'
+                  value={email}
+                  onChange={this.onChangeInput}
+                  type='email'
+                  error={errors.email}
+                />
+                <TextFieldGroup
+                  placeholder='Password'
+                  name='password'
+                  value={password}
+                  onChange={this.onChangeInput}
+                  type='password'
+                  error={errors.password}
+                />
+                <TextFieldGroup
+                  placeholder='Confirm Password'
+                  name='password2'
+                  value={password2}
+                  onChange={this.onChangeInput}
+                  type='password'
+                  error={errors.password2}
+                />
                 <input
                   type='submit'
                   className='btn btn-info btn-block mt-4'
