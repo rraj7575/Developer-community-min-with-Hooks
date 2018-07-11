@@ -5,7 +5,8 @@ import TextFieldGroup from './../common/TextFieldGroup'
 import TextAreaFieldGroup from './../common/TextAreaFieldGroup'
 import InputGroup from './../common/InputGroup'
 import SelectListGroup from './../common/SelectListGroup'
-
+import {createProfile} from './../../actions/profileAction'
+import {withRouter} from 'react-router-dom'
 
 class CreateProfile extends Component {
   constructor(props){
@@ -31,7 +32,32 @@ class CreateProfile extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
+    const {handle, company, website, location, status,
+      skills, githubusername, bio, twitter, facebook,
+      linkedin, youtube, instagram} = this.state
 
+    const profileData = {
+      handle: handle,
+      company: company,
+      website: website,
+      location: location,
+      status: status,
+      skills: skills,
+      githubusername: githubusername,
+      bio: bio,
+      twitter: twitter,
+      facebook: facebook,
+      linkedin: linkedin,
+      youtube: youtube,
+      instagram: instagram
+    }
+    this.props.onCreateProfile(profileData, this.props.history)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({errors: nextProps.errors})
+    }
   }
 
   onChange = (e) => {
@@ -45,7 +71,7 @@ class CreateProfile extends Component {
     }))
   }
   render(){
-    const {errors, handle, company, website, location,
+    const {handle, company, website, location, errors,
           skills, githubusername, bio, displaySocialInput,
           linkedin, twitter, youtube, instagram, facebook} = this.state
     let socialInputes
@@ -153,7 +179,7 @@ class CreateProfile extends Component {
                   error={errors.location}
                 />
                 <TextFieldGroup
-                  placeholder='Skills'
+                  placeholder='* Skills'
                   name='skills'
                   value={skills}
                   onChange={this.onChange}
@@ -200,4 +226,9 @@ const mapStateToProps = (state) => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(CreateProfile)
+const mapDispatchToProps = dispatch => {
+  return{
+    ...createProfile(dispatch)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CreateProfile))
