@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import classnames from 'classname'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom'
@@ -44,8 +43,6 @@ class Register extends Component {
   onChangeInput = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
-
-  showErrors = (err) => (<div className='invalid-feedback'> {err}</div>)
 
   render(){
     const {name, email, password, password2, errors} = this.state
