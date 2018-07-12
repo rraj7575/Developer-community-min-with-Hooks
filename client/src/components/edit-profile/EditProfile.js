@@ -5,8 +5,9 @@ import TextFieldGroup from './../common/TextFieldGroup'
 import TextAreaFieldGroup from './../common/TextAreaFieldGroup'
 import InputGroup from './../common/InputGroup'
 import SelectListGroup from './../common/SelectListGroup'
-import {createProfile} from './../../actions/profileAction'
+import {createProfile, getProfile} from './../../actions/profileAction'
 import {withRouter} from 'react-router-dom'
+import isEmpty from './../../validation/is-empty'
 
 class CreateProfile extends Component {
   constructor(props){
@@ -27,6 +28,51 @@ class CreateProfile extends Component {
       youtube: '',
       instagram: '',
       errors: {}
+    }
+  }
+
+  componentDidMount() {
+    this.props.getCurrentProfile()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({errors: nextProps.errors})
+    }
+    if (nextProps.profile.profile) {
+      const profile = nextProps.profile.profile
+      //Bring skills back to csv
+      const skillsCSV = profile.skills.join(',')
+      //If profile field does not exits, make empty string
+      profile.company = !isEmpty(profile.company) ? profile.company : ''
+      profile.website = !isEmpty(profile.website) ? profile.website : ''
+      profile.status = !isEmpty(profile.status) ? profile.status : ''
+      profile.location = !isEmpty(profile.location) ? profile.location : ''
+      profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : ''
+      profile.bio = !isEmpty(profile.bio) ? profile.bio : ''
+      profile.social = !isEmpty(profile.social) ? profile.social : {}
+      profile.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : ''
+      profile.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : ''
+      profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : ''
+      profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : ''
+      profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : ''
+      //Set component field state
+      this.setState({
+        handle: profile.handle,
+        company: profile.company,
+        website: profile.website,
+        location: profile.location,
+        status: profile.status,
+        skills: skillsCSV,
+        githubusername: profile.githubusername,
+        bio: profile.bio,
+        social: profile.social,
+        twitter: profile.twitter,
+        facebook: profile.facebook,
+        linkedin: profile.linkedin,
+        youtube: profile.youtube,
+        instagram: profile.instagram,
+      })
     }
   }
 
@@ -54,11 +100,6 @@ class CreateProfile extends Component {
     this.props.onCreateProfile(profileData, this.props.history)
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({errors: nextProps.errors})
-    }
-  }
 
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
@@ -72,54 +113,54 @@ class CreateProfile extends Component {
   }
   render(){
     const {handle, company, website, location, errors,
-          skills, githubusername, bio, displaySocialInput,
-          linkedin, twitter, youtube, instagram, facebook} = this.state
+      skills, githubusername, bio, displaySocialInput,
+      linkedin, twitter, youtube, instagram, facebook, status} = this.state
     let socialInputes
     if (displaySocialInput) {
-        socialInputes = (
-          <div>
-            <InputGroup
-              onChange={this.onChange}
-              placeholder='Twitter Profile URL'
-              name='twitter'
-              value={twitter}
-              icon='fab fa-twitter'
-              error={errors.twitter}
-            />
-            <InputGroup
-              onChange={this.onChange}
-              placeholder='Facebook Profile URL'
-              name='facebook'
-              value={facebook}
-              icon='fab fa-facebook'
-              error={errors.facebook}
-            />
-            <InputGroup
-              onChange={this.onChange}
-              placeholder='Instagram Profile URL'
-              name='instagram'
-              value={instagram}
-              icon='fab fa-instagram'
-              error={errors.instagram}
-            />
-            <InputGroup
-              onChange={this.onChange}
-              placeholder='YouTube Profile URL'
-              name='twitter'
-              value={youtube}
-              icon='fab fa-youtube'
-              error={errors.youtube}
-            />
-            <InputGroup
-              onChange={this.onChange}
-              placeholder='Linkdin Profile URL'
-              name='linkdin'
-              value={linkedin}
-              icon='fab fa-linkedin'
-              error={errors.linkedin}
-            />
-          </div>
-        )
+      socialInputes = (
+        <div>
+          <InputGroup
+            onChange={this.onChange}
+            placeholder='Twitter Profile URL'
+            name='twitter'
+            value={twitter}
+            icon='fab fa-twitter'
+            error={errors.twitter}
+          />
+          <InputGroup
+            onChange={this.onChange}
+            placeholder='Facebook Profile URL'
+            name='facebook'
+            value={facebook}
+            icon='fab fa-facebook'
+            error={errors.facebook}
+          />
+          <InputGroup
+            onChange={this.onChange}
+            placeholder='Instagram Profile URL'
+            name='instagram'
+            value={instagram}
+            icon='fab fa-instagram'
+            error={errors.instagram}
+          />
+          <InputGroup
+            onChange={this.onChange}
+            placeholder='YouTube Profile URL'
+            name='twitter'
+            value={youtube}
+            icon='fab fa-youtube'
+            error={errors.youtube}
+          />
+          <InputGroup
+            onChange={this.onChange}
+            placeholder='Linkdin Profile URL'
+            name='linkdin'
+            value={linkedin}
+            icon='fab fa-linkedin'
+            error={errors.linkedin}
+          />
+        </div>
+      )
     }
     const options = [
       {label: '* Select Professional Status', value: '0'},
@@ -136,10 +177,7 @@ class CreateProfile extends Component {
         <div className='container'>
           <div className='row'>
             <div className='col-md-8 m-auto'>
-              <h1 className='display-4 text-center'>Create your profile</h1>
-              <p className='lead text-center'>
-                Let's get some information to make your profile stand out
-              </p>
+              <h1 className='display-4 text-center'>Edit your profile</h1>
               <small className='d-block pb-3'>* = required field </small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -153,7 +191,7 @@ class CreateProfile extends Component {
                 <SelectListGroup
                   placeholder='Status'
                   name='status'
-                  value={this.state.status}
+                  value={status}
                   options={options}
                   onChange={this.onChange}
                   error={errors.status}
@@ -203,7 +241,7 @@ class CreateProfile extends Component {
                 />
                 <div className='mb-3'>
                   <button onClick={this.addSocialLink}
-                    className='btn btn-light'>
+                          className='btn btn-light'>
                     Add social link
                   </button>
                   <span className='text-muted'> optional </span>
@@ -221,6 +259,8 @@ class CreateProfile extends Component {
 CreateProfile.propTypes = {
   errors: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
+  onCreateProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -230,7 +270,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => {
   return{
-    ...createProfile(dispatch)
+    ...createProfile(dispatch),
+    ...getProfile(dispatch)
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CreateProfile))

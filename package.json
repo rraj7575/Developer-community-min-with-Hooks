@@ -6,11 +6,12 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "server": "node server.js",
-    "local": "nodemon server.js",
+    "local": "nodemon --inspect server.js",
+    "server-local": "nodemon --inspect server.js",
     "client-local": "PORT=3000 npm run start --prefix client",
     "client": "PORT=3000 npm run build --prefix client",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "dev": "concurrently \"npm run local\" \"npm run client-local\"",
+    "dev": "concurrently \"npm run server-local\" \"npm run client-local\"",
     "heroku-postbuid": "cross-env NODE_ENV=production"
   },
   "author": "rohit",

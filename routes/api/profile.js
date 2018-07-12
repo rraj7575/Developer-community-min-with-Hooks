@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
 const passport = require('passport')
 
 //Load validation
@@ -119,12 +118,14 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
   Profile.findOne({user: req.user.id})
     .then(profile => {
       if (profile) {
-        //Update
+        //Update Profile
         Profile.findOneAndUpdate(
           {user: req.user.id},
           {$set: profileFields},
           {new: true})
-        res.json('Profile updated')
+          .then(profi => console.log(profi))
+          .catch(error => console.log(error))
+          res.json('Profile updated')
       } else {
         // Create
         // Check if handle exists

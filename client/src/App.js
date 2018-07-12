@@ -15,6 +15,10 @@ import store from './store/store'
 import {clearCurrentProfile} from "./actions/profileAction";
 import PrivateRoute from './components/common/PrivateRoute'
 import CreateProfile from './components/create-profile/CreateProfile'
+import EditProfile from './components/edit-profile/EditProfile'
+import AddExperience from './components/add-credentials/AddExperience'
+import AddEducation from './components/add-credentials/AddEducation'
+
 // import Dashboard from './../src/components/dashboard/Dashboard'
 //Check for token
 
@@ -53,6 +57,15 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute path='/create-profile' component={CreateProfile} />
+              </Switch>
+              <Switch>
+                <PrivateRoute path='/edit-profile' component={EditProfile} />
+              </Switch>
+              <Switch>
+                <PrivateRoute path='/add-experience' component={AddExperience} />
+              </Switch>
+              <Switch>
+                <PrivateRoute path='/add-education' component={AddEducation} />
               </Switch>
             </div>
             <Footer/>

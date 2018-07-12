@@ -2,11 +2,18 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {getProfile} from './../../actions/profileAction'
+import {getProfile, deleteAccount} from './../../actions/profileAction'
 import Spinner from './../common/Spinner'
+import ProfileActions from './ProfileActions'
+
 class Dashboard extends Component {
+
   componentDidMount() {
     this.props.getCurrentProfile()
+  }
+
+  onDeleteClick = (e) => {
+    this.props.onDeleteAccount()
   }
   render() {
     const {user} = this.props.auth
@@ -17,11 +24,19 @@ class Dashboard extends Component {
     } else {
       //Check if loged in user has profile data
       if (Object.keys(profile).length > 0) {
-        dashboardContent = <h1>Display Profile </h1>
+        dashboardContent = (
+          <div>
+            <p className='lead text-muted'>Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link></p>
+            <ProfileActions/>
+            {/* TODO: exp and edu */}
+            <div style={{marginBottom: '60px'}}>
+              <button onClick={this.onDeleteClick} className='btn btn-danger'> Delete My Account</button>
+            </div>
+          </div>
+        )
       } else {
         dashboardContent = (
           <div>
-            <p className='lead text-muted'>Welcome {user.name}</p>
             <p className='lead text-muted'>You have not setup a profile, please add some info</p>
             <Link to='create-profile' className='btn btn-lg btn-info'>
               Create Profile
@@ -49,6 +64,7 @@ class Dashboard extends Component {
 Dashboard.propTypes = {
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
+  onDeleteAccount: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired
 }
 
@@ -59,7 +75,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    ...getProfile(dispatch)
+    ...getProfile(dispatch),
+    ...deleteAccount(dispatch)
   }
 }
 
