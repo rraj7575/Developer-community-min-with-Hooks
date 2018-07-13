@@ -68,6 +68,48 @@ export const deleteAccount = (dispatch) => {
   }
 }
 
+//Delete Experience
+export const deleteExperience = (dispatch) => {
+  return{
+    onDeleteExperience: (id) => {
+      axios.delete(`/api/profile/experience/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_PROFILE,
+            payload: res.data
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+          })
+        })
+    }
+  }
+}
+
+//Delete Education
+export const deleteEducation = (dispatch) => {
+  return{
+    onDeleteEducation: (id) => {
+      axios.delete(`/api/profile/education/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_PROFILE,
+            payload: res.data
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+          })
+        })
+    }
+  }
+}
+
 //Clear Profile
 export const clearCurrentProfile = () => {
   return {
@@ -76,7 +118,6 @@ export const clearCurrentProfile = () => {
 }
 //Add Experience
 export const addExperience = (dispatch) => {
-
   return{
     onAddExperience: (expData, history) => {
       axios.post('/api/profile/experience',  expData)
@@ -93,7 +134,6 @@ export const addExperience = (dispatch) => {
 
 //Add Education
 export const addEducation = (dispatch) => {
-
   return{
     onAddEducation: (eduData, history) => {
       axios.post('/api/profile/education',  eduData)
