@@ -23,6 +23,11 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className= 'nav-item'>
+          <Link className='nav-link' to="/feed" >
+            Post Feed
+          </Link>
+        </li>
+        <li className= 'nav-item'>
           <a href='' onClick={this.onLogout} className='nav-link' >
             <img src={user.avatar} alt={user.name} className='rounded-circle' style={{marginRight: '5px', width: '25px'}}/>
             Logout
@@ -54,7 +59,7 @@ class Navbar extends Component {
           <div className='collapse navbar-collapse' id='mobile-nav'>
             <ul className='navbar-nav mr-auto'>
               <li className='nav-item'>
-                <Link className='nav-link' to= '/profile'>
+                <Link className='nav-link' to= '/profiles'>
                   Developer
                 </Link>
               </li>
