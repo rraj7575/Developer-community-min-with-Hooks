@@ -11,7 +11,6 @@ const User = require('./../../models/User')
 const validateRegisterInput = require('../../validation/user/register')
 const validateLoginInput = require('../../validation/user/login')
 
-router.get('/test', (req, res) => res.json({msg: 'hello user'}))
 router.post('/register', (req, res) => {
   const {errors, isValid} = validateRegisterInput(req.body)
   //Check validation

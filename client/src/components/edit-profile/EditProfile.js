@@ -146,7 +146,7 @@ class CreateProfile extends Component {
           <InputGroup
             onChange={this.onChange}
             placeholder='YouTube Profile URL'
-            name='twitter'
+            name='youtube'
             value={youtube}
             icon='fab fa-youtube'
             error={errors.youtube}
@@ -154,7 +154,7 @@ class CreateProfile extends Component {
           <InputGroup
             onChange={this.onChange}
             placeholder='Linkdin Profile URL'
-            name='linkdin'
+            name='linkedin'
             value={linkedin}
             icon='fab fa-linkedin'
             error={errors.linkedin}

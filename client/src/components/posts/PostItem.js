@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import classname from 'classname'
 import { deletePost, addLike, removeLike } from './../../actions/postActions'
 
 class PostItem extends Component {
@@ -18,8 +19,13 @@ class PostItem extends Component {
     this.props.onRemoveLike(id)
   }
 
+  findUserLike = (likes) => {
+    const { auth } = this.props
+    return likes.filter(like => like.user === auth.user.id).length > 0
+  }
+
   render() {
-    const { post, auth } = this.props
+    const { post, auth, showActions } = this.props
     return(
       <div className='card card-body mb-3'>
         <div className="row">
@@ -39,8 +45,12 @@ class PostItem extends Component {
             <p className='lead'>
               {post.text}
             </p>
-            <button type='button' className='btn btn-light mr-1' onClick={() => this.onLikeClick(post._id)}>
-              <i className='text-info fas fa-thumbs-up' />
+            {showActions ? (
+              <span>
+                <button type='button' className='btn btn-light mr-1' onClick={() => this.onLikeClick(post._id)}>
+              <i className={classname('text-info fas fa-thumbs-up', {
+                'text-info': this.findUserLike(post.likes)
+              })} />
               <span className="badge badge-light">{post.likes.length}</span>
             </button>
             <button type='button' className='btn btn-light mr-1' onClick={() => this.onUnlikeClick(post._id)}>
@@ -49,9 +59,11 @@ class PostItem extends Component {
             <Link to={`/post/${post._id}`} className='btn btn-info mr-1'>
               Comments
             </Link>
-            {post.user === auth.user.id ? (<button type='button' className="btn btn-danger mr-1" onClick={() => this.onDeleteClick(post._id)} >
-              <i className='fas fa-times' />
-            </button>): null}
+                {post.user === auth.user.id ? (<button type='butt on' className="btn btn-danger mr-1" onClick={() => this.onDeleteClick(post._id)} >
+                  <i className='fas fa-times' />
+                </button>): null}
+              </span>
+            ): null}
           </div>
         </div>
       </div>
@@ -66,6 +78,10 @@ PostItem.propTypes = {
   onAddLike: PropTypes.func.isRequired,
   onRemoveLike: PropTypes.func.isRequired,
 };
+
+PostItem.defaultProps = {
+  showActions: true
+}
 
 const mapStateToProps = (state) => ({
   auth: state.auth

@@ -68,7 +68,7 @@ class AddEducation extends Component {
               Go Back
             </Link>
             <h1 className="display-4 text-center">
-              Add Experience
+              Add Education
             </h1>
             <p className="lead text-center"> Add Your School, bootcamp etc, that you have attended </p>
             <small className="d-block pb-3">* require fields</small>

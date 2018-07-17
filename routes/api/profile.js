@@ -11,8 +11,6 @@ const Profile = require('./../../models/Profile')
 //Load User Model
 const User = require('./../../models/User')
 
-router.get('/test', (req, res) => res.json({msg: 'Profile Works'}))
-
 //@route POST api/profile/
 //@desc Get profile
 //@access Private
@@ -150,6 +148,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
 router.post('/experience', passport.authenticate('jwt', {session: false}) ,(req, res) => {
   const {errors, isValid} = validateExperienceInput(req.body)
+  debugger
   if (!isValid) {
     return res.status(400).json(errors)
   }
@@ -162,11 +161,13 @@ router.post('/experience', passport.authenticate('jwt', {session: false}) ,(req,
           location: req.body.location,
           from: req.body.from,
           to: req.body.to,
-          current: req.body.current,
+          current: req.body.current !== '' ,
           description: req.body.description
         }
         profile.experience.unshift(newExp)
-         profile.save().then(res.json(profile))
+        profile.save()
+          .then(profile => res.json(profile))
+          .catch(err => res.json(err))
       }
     }).catch(ere => res.json({experience: 'Profile not found'}))
 })
@@ -185,15 +186,15 @@ router.post('/education', passport.authenticate('jwt', {session: false}) ,(req, 
       if (profile) {
         const newEdu = {
           school: req.body.school,
-          company: req.body.company,
           degree: req.body.degree,
           fieldofstudy: req.body.fieldofstudy,
+          from: req.body.from,
           to: req.body.to,
-          current: req.body.current,
+          current: req.body.current !== '' ,
           description: req.body.description
         }
         profile.education.unshift(newEdu)
-        profile.save().then(res.json(profile))
+        profile.save().then(profile => res.json(profile))
       }
     }).catch(ere => res.json({experience: 'Profile not found'}))
 })

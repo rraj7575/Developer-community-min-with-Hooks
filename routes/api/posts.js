@@ -125,11 +125,6 @@ router.post('/comment/:id', passport.authenticate('jwt', ({session: false})), (r
 //@desc Remove comment
 //@access Private
 router.delete('/comment/:id/:comment_id', passport.authenticate('jwt', ({session: false})), (req, res) => {
-  const {errors, isValid} = validatePostInput(req.body)
-  //Check validation
-  if (!isValid) {
-    return res.status(401).json(errors)
-  }
   Post.findById(req.params.id)
     .then(post => {
       if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {

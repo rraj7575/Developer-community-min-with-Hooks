@@ -145,6 +145,7 @@ export const addExperience = (dispatch) => {
       axios.post('/api/profile/experience',  expData)
         .then(res => history.push('/dashboard'))
         .catch(err => {
+          debugger
           dispatch({
             type: GET_ERRORS,
             payload: err.response.data

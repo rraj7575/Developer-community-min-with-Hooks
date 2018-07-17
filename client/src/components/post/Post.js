@@ -1,30 +1,41 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import PostItem from './../posts/PostItem'
 import Spinner from './../common/Spinner'
-import PostForm from './PostForm'
-import PostFeed from './PostFeed'
-import {getPosts} from "../../actions/postActions";
+import {getPost} from "../../actions/postActions";
+import CommentForm from './CommentForm'
+import CommentFeed from './CommentFeed'
 
 class Post extends Component {
-  componentDidMount() {
-    this.props.onGetPosts()
-  }
-  render() {
-    const { posts, loading } = this.props.post
-    let postContent
-    if (posts === null || loading) {
-      postContent = <Spinner />
-    } else {
-      postContent = <PostFeed posts={posts} />
-    }
 
+  componentDidMount() {
+    this.props.onGetPost(this.props.match.params.id)
+  }
+
+  render() {
+    const { post, loading } = this.props.post
+    let postContent
+    if (post === null || loading || Object.keys(post).length === 0) {
+      postContent = <Spinner/>
+    } else {
+      postContent = (
+        <div>
+          <PostItem post={post} showActions={false} />
+          <CommentForm postId={post._id} />
+          <CommentFeed postId={post._id} comments={post.comments} />
+        </div>
+      )
+    }
     return(
-      <div className='feed'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-12'>
-              <PostForm/>
+      <div className="post">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <Link to='/feed' className='btn btn-light mb-3' >
+                Back To Feed
+              </Link>
               {postContent}
             </div>
           </div>
@@ -36,7 +47,7 @@ class Post extends Component {
 
 Post.propTypes = {
   post: PropTypes.object.isRequired,
-  onGetPosts: PropTypes.func.isRequired,
+  onGetPost: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -45,7 +56,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    ...getPosts(dispatch)
+    ...getPost(dispatch)
   }
 }
 

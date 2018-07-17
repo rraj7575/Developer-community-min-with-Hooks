@@ -17,6 +17,9 @@ const profileSchema = new Schema({
   website: {
     type: String
   },
+  location: {
+    type: String
+  },
   status: {
     type: String,
     require: true
@@ -24,6 +27,9 @@ const profileSchema = new Schema({
   skills: {
     type: [String],
     require: true
+  },
+  bio: {
+    type: String
   },
   githubusername: {
     type: String

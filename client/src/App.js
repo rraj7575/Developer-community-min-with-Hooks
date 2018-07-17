@@ -20,6 +20,7 @@ import AddExperience from './components/add-credentials/AddExperience'
 import AddEducation from './components/add-credentials/AddEducation'
 import Profiles from './components/profiles/Profiles'
 import Profile from './components/profile/Profile'
+import Posts from './components/posts/Posts'
 import Post from './components/post/Post'
 
 // import Dashboard from './../src/components/dashboard/Dashboard'
@@ -73,7 +74,10 @@ class App extends Component {
                 <PrivateRoute path='/add-education' component={AddEducation} />
               </Switch>
               <Switch>
-                <PrivateRoute path='/feed' component={Post} />
+                <PrivateRoute path='/feed' component={Posts} />
+              </Switch>
+              <Switch>
+                <PrivateRoute path='/post/:id' component={Post} />
               </Switch>
             </div>
             <Footer/>
