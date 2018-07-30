@@ -23,6 +23,11 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className= 'nav-item'>
+          <Link className='nav-link' to="/chat" >
+            Chat
+          </Link>
+        </li>
+        <li className= 'nav-item'>
           <Link className='nav-link' to="/feed" >
             Post Feed
           </Link>

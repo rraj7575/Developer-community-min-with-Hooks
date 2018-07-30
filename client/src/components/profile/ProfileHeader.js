@@ -11,7 +11,7 @@ class ProfileHeader extends Component {
           <div className='card card-body bg-info text-white mb-3'>
             <div className='row'>
               <div className='col-md-3 col-4 m-auto'>
-                <img className='rounded-circle' src={profile.user.avatar} />
+                <img className='rounded-circle' src={profile.user.avatar} alt='user' />
               </div>
             </div>
             <div className='text-center'>

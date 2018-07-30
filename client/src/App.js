@@ -22,7 +22,7 @@ import Profiles from './components/profiles/Profiles'
 import Profile from './components/profile/Profile'
 import Posts from './components/posts/Posts'
 import Post from './components/post/Post'
-
+import Chat from './components/chat/Chat'
 // import Dashboard from './../src/components/dashboard/Dashboard'
 //Check for token
 
@@ -75,6 +75,9 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute path='/feed' component={Posts} />
+              </Switch>
+              <Switch>
+                <PrivateRoute path='/chat' component={Chat} />
               </Switch>
               <Switch>
                 <PrivateRoute path='/post/:id' component={Post} />

@@ -16,7 +16,7 @@ class CommentItem extends Component {
       <div className='card card-body mb-3'>
         <div className="row">
           <div className="col-md-2">
-            <a href='#'>
+            <a href=''>
               <img
                 style={{width: '70px'}}
                 className='rounded-circle d-none d-md-block'
