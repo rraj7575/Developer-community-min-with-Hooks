@@ -77,7 +77,7 @@ class App extends Component {
                 <PrivateRoute path='/feed' component={Posts} />
               </Switch>
               <Switch>
-                <PrivateRoute path='/chat' component={Chat} />
+                <PrivateRoute path='/chat' user={store.auth} component={Chat} />
               </Switch>
               <Switch>
                 <PrivateRoute path='/post/:id' component={Post} />
