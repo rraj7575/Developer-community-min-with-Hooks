@@ -84,7 +84,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -191,7 +195,6 @@
         <option value="$PROJECT_DIR$/client/src/components/edit-profile/EditProfile.js" />
         <option value="$PROJECT_DIR$/client/src/actions/profileAction.js" />
         <option value="$PROJECT_DIR$/client/src/components/add-credentials/AddEducation.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config/passport.js" />
@@ -216,6 +219,7 @@
         <option value="$PROJECT_DIR$/client/src/components/chat/Chat.js" />
         <option value="$PROJECT_DIR$/ReadMe" />
         <option value="$PROJECT_DIR$/routes/api/profile.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -317,12 +321,12 @@
       <workItem from="1532926632109" duration="22903000" />
       <workItem from="1533012201406" duration="7234000" />
       <workItem from="1645179979897" duration="1084000" />
-      <workItem from="1645181379772" duration="292000" />
+      <workItem from="1645181379772" duration="534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391252000" />
+    <option name="totallyTimeSpent" value="391494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -336,7 +340,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="781" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15503876" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15503876" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -350,7 +354,7 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.503125" side_tool="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.496875" visible="true" weight="0.30746704" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.496875" visible="true" weight="0.30746704" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32899022" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -807,7 +811,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
