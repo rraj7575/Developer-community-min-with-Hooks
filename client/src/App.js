@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
+import Loadable from 'react-loadable'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Landing from './components/layout/Landing'
-import Register from './components/auth/Register'
-import Login from './components/auth/Login'
+// import Register from './components/auth/Register'
+// import Login from './components/auth/Login'
 import Dashboard from './components/dashboard/Dashboard'
 import {Provider} from 'react-redux'
 import jwt_decode from 'jwt-decode'
@@ -23,6 +24,7 @@ import Profile from './components/profile/Profile'
 import Posts from './components/posts/Posts'
 import Post from './components/post/Post'
 import Chat from './components/chat/Chat'
+import {doLoad} from "./utils/LoadingComponent";
 
 if (localStorage.jwtToken) {
   const decodedData = jwt_decode(localStorage.jwtToken)
@@ -47,9 +49,15 @@ class App extends Component {
             <Navbar />
             <Route exact path='/' component={Landing} />
             <div className='container'>
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/profiles' component={Profiles} />
+              <Route path='/register' exact
+                     render={ (props) => <AsyncRegister {...props} /> } />
+              {/*<Route exact path='/register' component={Register} />*/}
+              <Route path='/login' exact
+                     render={ (props) => <AsyncLogin {...props} /> } />
+              <Route path='/profiles' exact
+                     render={ (props) => <AsyncProfiles {...props} /> } />
+              {/*<Route exact path='/login' component={Login} />*/}
+              {/*<Route exact path='/profiles' component={Profiles} />*/}
               <Route exact path='/profile/:handle' component={Profile} />
               <Switch>
                 <PrivateRoute path='/dashboard' component={Dashboard} />
@@ -83,5 +91,9 @@ class App extends Component {
     )
   }
 }
+const AsyncRegister = Loadable(doLoad(() => import('./components/auth/Register')))
+const AsyncLogin = Loadable(doLoad(() => import('./components/auth/Login')))
+const AsyncProfiles = Loadable(doLoad(() => import('./components/profiles/Profiles')))
+
 
 export default App;

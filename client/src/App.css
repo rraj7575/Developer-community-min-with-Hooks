@@ -2,6 +2,16 @@
 image{
   width: 100%;
 }
+
+.Loader {
+  margin: auto;
+  align-self: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .landing{
   position: relative;
   background: url("./image/landingImage.jpeg");
