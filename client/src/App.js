@@ -23,20 +23,13 @@ import Profile from './components/profile/Profile'
 import Posts from './components/posts/Posts'
 import Post from './components/post/Post'
 import Chat from './components/chat/Chat'
-// import Dashboard from './../src/components/dashboard/Dashboard'
-//Check for token
 
 if (localStorage.jwtToken) {
-  //set auth token header auth
-  //Decode data
   const decodedData = jwt_decode(localStorage.jwtToken)
-  //Set user and isAuthenticated
   const currentTime = Date.now()/1000
   if (decodedData.exp < currentTime) {
     store.dispatch(setCurrentUser({}))
-    //Redirect to login page
     localStorage.removeItem('jwtToken')
-    //Remove auth header for future request
     setAuthToken(false)
     store.dispatch(clearCurrentProfile())
     window.location.href = '/login'

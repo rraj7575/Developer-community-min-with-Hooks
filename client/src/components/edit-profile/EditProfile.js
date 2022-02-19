@@ -41,9 +41,7 @@ class CreateProfile extends Component {
     }
     if (nextProps.profile.profile) {
       const profile = nextProps.profile.profile
-      //Bring skills back to csv
       const skillsCSV = profile.skills.join(',')
-      //If profile field does not exits, make empty string
       profile.company = !isEmpty(profile.company) ? profile.company : ''
       profile.website = !isEmpty(profile.website) ? profile.website : ''
       profile.status = !isEmpty(profile.status) ? profile.status : ''
@@ -56,7 +54,6 @@ class CreateProfile extends Component {
       profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : ''
       profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : ''
       profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : ''
-      //Set component field state
       this.setState({
         handle: profile.handle,
         company: profile.company,

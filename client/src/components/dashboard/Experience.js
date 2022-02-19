@@ -48,10 +48,6 @@ Experience.propTypes = {
   onDeleteExperience: PropTypes.func.isRequired
 }
 
-// const mapStateToProps = (state) => ({
-//   auth: state.auth,
-//   errors: state.errors,
-// });
 
 const mapDispatchToProps = dispatch => {
   return {
