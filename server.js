@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 const db = require('./config/keys').mongoAwsURL
 
 //Connect to mongoDB
-mongoose.connect(db)
+mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err) )
 
@@ -50,43 +50,43 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-client.on('connection', function (socket) {
-  console.log('Socket connected')
-  // const chat = db.coll
-  const sendStatus = function (s) {
-    socket.emit('status', s)
-  }
-  const res = 'from server'
+// client.on('connection', function (socket) {
+//   console.log('Socket connected')
+//   // const chat = db.coll
+//   const sendStatus = function (s) {
+//     socket.emit('status', s)
+//   }
+//   const res = 'from server'
 
   // Chat.find().limit(100).sort({_id: 1}).toArray(function (err, res) {
   //   if (err) throw err
   //
   // })
 
-  socket.on('previousChat', function () {
-    Chat.find()
-        .sort({id: -1})
-        .then(chats => client.emit('output', chats))
-  })
-
-  socket.on('input', function (data) {
-    let message = data.msg
-    const user = data.user
-    if (message === '') {
-      sendStatus('Please enter name and message')
-    } else {
-      const chat = new Chat({message, user})
-      chat.save().then(chat => {
-        if (chat) {
-          client.emit('output', [chat])
-          // Chat.find()
-          //     .sort({id: -1})
-          //     .then(chats => client.emit('output', chats))
-        }
-      })
-    }
-  })
-  socket.on('clear', function () {
-    socket.emit('Cleared')
-  })
-})
+//   socket.on('previousChat', function () {
+//     Chat.find()
+//         .sort({id: -1})
+//         .then(chats => client.emit('output', chats))
+//   })
+//
+//   socket.on('input', function (data) {
+//     let message = data.msg
+//     const user = data.user
+//     if (message === '') {
+//       sendStatus('Please enter name and message')
+//     } else {
+//       const chat = new Chat({message, user})
+//       chat.save().then(chat => {
+//         if (chat) {
+//           client.emit('output', [chat])
+//           // Chat.find()
+//           //     .sort({id: -1})
+//           //     .then(chats => client.emit('output', chats))
+//         }
+//       })
+//     }
+//   })
+//   socket.on('clear', function () {
+//     socket.emit('Cleared')
+//   })
+// })
