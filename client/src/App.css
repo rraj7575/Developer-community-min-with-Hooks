@@ -4,7 +4,7 @@ image{
 }
 .landing{
   position: relative;
-  background: url("./image/showcase.jpg");
+  background: url("./image/landingImage.jpeg");
   background-size: cover;
   background-position: center;
   height: 100vh;

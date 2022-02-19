@@ -23,7 +23,7 @@ class Landing extends Component {
                   Developer Center
                 </h1>
                 <p className='lead'>
-                  Create a developer profile/portfolio, share post and get help from other developers
+                  Create a developer profile, share post and get help from other developers
                 </p>
                 <Link to='/register' className='btn btn-lg btn-info mr-2'> Sign Up</Link>
                 <Link to='/login' className='btn btn-lg btn-light'> Login</Link>

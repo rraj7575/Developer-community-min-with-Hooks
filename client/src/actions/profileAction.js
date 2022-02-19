@@ -22,7 +22,7 @@ export const getProfile  = dispatch => {
   }
 }
 
-//Get all profiles
+
 export const getProfiles  = dispatch => {
   return{
     getAllProfile: () => {
@@ -44,14 +44,14 @@ export const getProfiles  = dispatch => {
   }
 }
 
-//Profile Loading
+
 export const setProfileLoading = () => {
   return {
     type: PROFILE_LOADING
   }
 }
 
-//Create profile
+
 export const createProfile = (dispatch) => {
   return{
     onCreateProfile: (profileData, history) => {
@@ -67,7 +67,7 @@ export const createProfile = (dispatch) => {
   }
 }
 
-//Delete account and profile
+
 export const deleteAccount = (dispatch) => {
   return{
     onDeleteAccount: () => {
@@ -90,7 +90,7 @@ export const deleteAccount = (dispatch) => {
   }
 }
 
-//Delete Experience
+
 export const deleteExperience = (dispatch) => {
   return{
     onDeleteExperience: (id) => {
@@ -111,7 +111,7 @@ export const deleteExperience = (dispatch) => {
   }
 }
 
-//Delete Education
+
 export const deleteEducation = (dispatch) => {
   return{
     onDeleteEducation: (id) => {
@@ -132,13 +132,13 @@ export const deleteEducation = (dispatch) => {
   }
 }
 
-//Clear Profile
+
 export const clearCurrentProfile = () => {
   return {
     type: CLEAR_CURRENT_PROFILE
   }
 }
-//Add Experience
+
 export const addExperience = (dispatch) => {
   return{
     onAddExperience: (expData, history) => {
@@ -155,7 +155,7 @@ export const addExperience = (dispatch) => {
   }
 }
 
-//Add Education
+
 export const addEducation = (dispatch) => {
   return{
     onAddEducation: (eduData, history) => {
@@ -171,7 +171,7 @@ export const addEducation = (dispatch) => {
   }
 }
 
-//Get profiles by handle
+
 export const getProfileByHandle  = dispatch => {
   return{
     onGetProfileByHandle: (handle) => {

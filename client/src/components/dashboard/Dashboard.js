@@ -24,7 +24,6 @@ class Dashboard extends Component {
     if (profile === null || loading) {
       dashboardContent = <Spinner/>
     } else {
-      //Check if loged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
           <div>

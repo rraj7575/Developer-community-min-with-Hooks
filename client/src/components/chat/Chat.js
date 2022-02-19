@@ -36,7 +36,7 @@ class Chat extends Component {
     socket.on('connect', ()=> {
       console.log('Socket connected')
     })
-    // this.setState({socket})
+
     socket.on('output', function (curData) {
       if (curData) {
         const data = [...self.state.data, ...curData]

@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {logoutUser} from './../../actions/authActions'
 import {clearCurrentProfile} from './../../actions/profileAction'
 import store from './../../store/store'
+
 class Navbar extends Component {
 
   onLogout = (e) => {
@@ -57,7 +58,7 @@ class Navbar extends Component {
     return(
       <nav className='navbar navbar-expand-sm navbar-dark bg-dark mb-4'>
         <div className="container">
-          <Link className='navbar-brand' to='/'> DevConnector</Link>
+          <Link className='navbar-brand' to='/'> Home</Link>
           {/*<button className='navbar-toggle' data-toggle="collapse" data-target="#mobile-nav">*/}
             {/*<span className='navbar-toggler-icon'> </span>*/}
           {/*</button>*/}

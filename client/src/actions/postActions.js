@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { GET_ERRORS, ADD_POST, GET_POSTS, POST_LOADING, DELETE_POST, GET_POST,CLEAR_ERRORS } from './types'
 
-//Add Post
 export const addPost = (dispatch) => {
   return{
     onAddPost: (postData) => {
@@ -23,7 +22,6 @@ export const addPost = (dispatch) => {
   }
 }
 
-//Delete Post
 export const deletePost = (dispatch) => {
   return{
     onDeletePost: (id) => {
@@ -44,7 +42,6 @@ export const deletePost = (dispatch) => {
   }
 }
 
-//Like Post
 export const addLike = (dispatch) => {
   return{
     onAddLike: (id) => {
@@ -60,7 +57,6 @@ export const addLike = (dispatch) => {
   }
 }
 
-//Remove Post
 export const removeLike = (dispatch) => {
   return{
     onRemoveLike: (id) => {
@@ -76,7 +72,7 @@ export const removeLike = (dispatch) => {
   }
 }
 
-//Get Posts
+
 export const getPosts = (dispatch) => {
   return{
     onGetPosts: () => {
@@ -98,7 +94,6 @@ export const getPosts = (dispatch) => {
   }
 }
 
-//Get Post
 export const getPost = (dispatch) => {
   return{
     onGetPost: (id) => {
@@ -126,7 +121,6 @@ export const setPostLoading = () => {
   }
 }
 
-//Add Comment
 export const addComment = (dispatch) => {
   return{
     onAddComment: (postId, commentData) => {
@@ -148,7 +142,7 @@ export const addComment = (dispatch) => {
   }
 }
 
-//Delete Comment
+
 export const deleteComment = (dispatch) => {
   return{
     onDeleteComment: (postId, commentId) => {
@@ -169,7 +163,7 @@ export const deleteComment = (dispatch) => {
   }
 }
 
-//Clear errors
+
 export const clearErrors = () => {
   return{
     type: CLEAR_ERRORS,
