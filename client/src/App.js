@@ -23,7 +23,7 @@ import PrivateRoute from './components/common/PrivateRoute'
 // import Profile from './components/profile/Profile'
 // import Posts from './components/posts/Posts'
 // import Post from './components/post/Post'
-import Chat from './components/chat/Chat'
+// import Chat from './components/chat/Chat'
 import {doLoad} from "./utils/LoadingComponent";
 
 if (localStorage.jwtToken) {
@@ -36,6 +36,7 @@ if (localStorage.jwtToken) {
     store.dispatch(clearCurrentProfile())
     window.location.href = '/login'
   }
+  console.log('Setting tokens.......')
   setAuthToken(localStorage.jwtToken)
   store.dispatch(setCurrentUser(decodedData))
 }

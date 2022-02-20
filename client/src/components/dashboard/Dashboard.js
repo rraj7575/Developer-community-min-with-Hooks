@@ -9,8 +9,12 @@ import Experience from './Experience'
 import Education from './Education'
 
 class Dashboard extends Component {
-
+    constructor(props){
+        super(props)
+        console.log('inside Dashboard constructor')
+    }
   componentDidMount() {
+   console.log('inside Dashboard componentDidMount')
     this.props.getCurrentProfile()
   }
 
@@ -18,6 +22,7 @@ class Dashboard extends Component {
     this.props.onDeleteAccount()
   }
   render() {
+      console.log('Dashboard Component')
     const {user} = this.props.auth
     const {profile, loading} = this.props.profile
     let dashboardContent
