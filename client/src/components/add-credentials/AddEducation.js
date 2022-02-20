@@ -40,13 +40,13 @@ class AddEducation extends Component {
     e.preventDefault()
     const { school, current,from, to, degree, fieldofstudy, description } = this.state
     const expData = {
-      school: school,
-      degree: degree,
-      fieldofstudy: fieldofstudy,
-      from: from,
-      to: to,
-      current: current,
-      description: description
+      school,
+      degree,
+      fieldofstudy,
+      from,
+      to,
+      current,
+      description
     }
     this.props.onAddEducation(expData, this.props.history)
   }

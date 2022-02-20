@@ -32,16 +32,17 @@ class Register extends Component {
     e.preventDefault()
     const {name, email, password, password2} = this.state
     const newUser = {
-      name: name,
-      email: email,
-      password: password,
-      password2: password2
+      name,
+      email,
+      password,
+      password2
     }
     this.props.onSignUp(newUser, this.props.history)
   }
 
   onChangeInput = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    const {name, value} = e.target
+    this.setState({[name]: value})
   }
 
   render(){

@@ -40,13 +40,13 @@ class AddExperience extends Component {
     e.preventDefault()
     const { company, current,from, to, title, location, description } = this.state
     const expData = {
-      company: company,
-      title: title,
-      location: location,
-      from: from,
-      to: to,
-      current: current,
-      description: description
+      company,
+      title,
+      location,
+      from,
+      to,
+      current,
+      description
     }
     this.props.onAddExperience(expData, this.props.history)
   }
@@ -111,19 +111,19 @@ class AddExperience extends Component {
                 error={errors.location}
                 disabled={disabled}
               />
-              <div className="form-check mb-4">
-                <input
-                  type="checkbox"
-                  name='current'
-                  className="form-check-input"
-                  value={current}
-                  checked={current}
-                  onChange={this.onCheck}
-                />
-                <label htmlFor='from' className="form-check-label">
-                  Current job
-                </label>
-              </div>
+              {/*<div className="form-check mb-4">*/}
+                {/*<input*/}
+                  {/*type="checkbox"*/}
+                  {/*name='current'*/}
+                  {/*className="form-check-input"*/}
+                  {/*value={current}*/}
+                  {/*checked={current}*/}
+                  {/*onChange={this.onCheck}*/}
+                {/*/>*/}
+                {/*<label htmlFor='from' className="form-check-label">*/}
+                  {/*Current job*/}
+                {/*</label>*/}
+              {/*</div>*/}
               <TextAreaFieldGroup
                 placeholder='Job Description'
                 name='description'

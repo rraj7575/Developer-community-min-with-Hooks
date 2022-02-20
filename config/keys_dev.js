@@ -1,4 +1,4 @@
 module.exports = {
-  mongoAwsURL: 'mongodb://rohit:abcd1234@ds033113.mlab.com:33113/connect-world',
+  mongoAwsURL: 'mongodb+srv://rraj7575:abc@cluster0.zphmz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   secretKey: 'secret'
 }

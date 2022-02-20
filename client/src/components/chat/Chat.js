@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import io from 'socket.io-client'
 import jwt_decode from "jwt-decode";
-const socketUrl = 'http://localhost:5000'
+const socketUrl = 'http://localhost:6000'
 const socket = io(socketUrl)
 
 
@@ -24,7 +24,7 @@ class Chat extends Component {
   }
 
   componentDidUpdate() {
-    this.scrollToBottom();
+    // this.scrollToBottom();
   }
 
   scrollToBottom = () => {
@@ -83,9 +83,6 @@ class Chat extends Component {
             <div className='col-md-6 offset-md-3 col-sm-12'>
               <h1 className="text-center">
                 Chat
-                <button className="btn btn-danger">
-                  Clear
-                </button>
               </h1>
                 <div className="status">
                 </div>

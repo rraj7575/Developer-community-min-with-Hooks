@@ -40,7 +40,8 @@ class CreateProfile extends Component {
       this.setState({errors: nextProps.errors})
     }
     if (nextProps.profile.profile) {
-      const profile = nextProps.profile.profile
+      const {profile} = nextProps.profile
+      // const profile = nextProps.profile.profile
       const skillsCSV = profile.skills.join(',')
       profile.company = !isEmpty(profile.company) ? profile.company : ''
       profile.website = !isEmpty(profile.website) ? profile.website : ''
@@ -80,19 +81,19 @@ class CreateProfile extends Component {
       linkedin, youtube, instagram} = this.state
 
     const profileData = {
-      handle: handle,
-      company: company,
-      website: website,
-      location: location,
-      status: status,
-      skills: skills,
-      githubusername: githubusername,
-      bio: bio,
-      twitter: twitter,
-      facebook: facebook,
-      linkedin: linkedin,
-      youtube: youtube,
-      instagram: instagram
+      handle,
+      company,
+      website,
+      location,
+      status,
+      skills,
+      githubusername,
+      bio,
+      twitter,
+      facebook,
+      linkedin,
+      youtube,
+      instagram
     }
     this.props.onCreateProfile(profileData, this.props.history)
   }
@@ -161,13 +162,10 @@ class CreateProfile extends Component {
     }
     const options = [
       {label: '* Select Professional Status', value: '0'},
-      {label: 'CEO', value: 'CEO'},
       {label: 'Developer', value: 'Developer'},
       {label: 'Junior Developer', value: 'Junior Developer'},
       {label: 'Senior Developer', value: 'Senior Developer'},
-      {label: 'Manager', value: 'Manager'},
       {label: 'Intern', value: 'Intern'},
-      {label: 'cool', value: 'cool'},
     ]
     return(
       <div className='create-profile'>
