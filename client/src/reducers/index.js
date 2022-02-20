@@ -5,8 +5,8 @@ import errorReducer from './errorReducer'
 import postReducer from './postReducer'
 
 export default combineReducers({
-  auth: authReducer,
-  errors: errorReducer,
-  profile: profileReducer,
-  post: postReducer
+    auth: authReducer,
+    errors: errorReducer,
+    profile: profileReducer,
+    post: postReducer
 })

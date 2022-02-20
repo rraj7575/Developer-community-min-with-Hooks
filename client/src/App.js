@@ -4,7 +4,7 @@ import './App.css';
 import Loadable from 'react-loadable'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import Landing from './components/layout/Landing2'
+import Landing from './components/layout/Landing'
 import {Provider} from 'react-redux'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from './utils/setAuthToken'
@@ -57,11 +57,11 @@ class App extends Component {
     )
   }
 }
-const AsyncRegister = Loadable(doLoad(() => import('./components/auth/Register2')))
-const AsyncLogin = Loadable(doLoad(() => import('./components/auth/Login2')))
-const AsyncProfiles = Loadable(doLoad(() => import('./components/profiles/Profiles2')))
+const AsyncRegister = Loadable(doLoad(() => import('./components/auth/Register')))
+const AsyncLogin = Loadable(doLoad(() => import('./components/auth/Login')))
+const AsyncProfiles = Loadable(doLoad(() => import('./components/profiles/Profiles')))
 const AsyncProfile = Loadable(doLoad(() => import('./components/profile/Profile')))
-const AsyncDashboard = Loadable(doLoad(() => import('./components/dashboard/Dashboard2')))
+const AsyncDashboard = Loadable(doLoad(() => import('./components/dashboard/Dashboard')))
 
 
 
