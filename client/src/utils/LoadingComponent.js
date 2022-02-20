@@ -13,6 +13,7 @@ class LoadingComponent extends Component {
   }
 
   render () {
+    console.log('Component loading...')
     if (this.props.error) {
       return this.renderUI(error, 'Oops, something went wrong ...')
     } else if (this.props.pastDelay) {

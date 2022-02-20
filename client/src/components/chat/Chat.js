@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 // import io from 'socket.io-client'
 import jwt_decode from "jwt-decode";
+import store from "../../store/store";
+// import PrivateRoute from "../../App";
+import {connect} from "react-redux";
 // const socketUrl = 'http://localhost:6000'
 // const socket = io(socketUrl)
 
@@ -9,6 +12,7 @@ class Chat extends Component {
 
   constructor(props){
     super(props)
+    console.log('auth', props.auth)
     this.state = {
       data: []  ,
       msg: ''
@@ -47,7 +51,8 @@ class Chat extends Component {
 
 
   onChange = (e) => {
-    this.setState({msg: e.target.value})
+    const {value} = e.target
+    this.setState({msg: value})
   }
 
   getCurrentUser = () => jwt_decode(localStorage.jwtToken).name
@@ -115,4 +120,8 @@ class Chat extends Component {
   }
 }
 
-export default Chat
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps)(Chat)
