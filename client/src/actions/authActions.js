@@ -7,7 +7,11 @@ export const registerUser = dispatch => {
   return{
     onSignUp: (userData, history) => {
       axios.post('/api/users/register', userData)
-      .then(res => history.push('/login'))
+      .then(res => history.push({
+            pathname: '/login',
+            state: {message: 'You have successfully registered.'}
+      })
+      )
       .catch(err => {
         dispatch({
           type: GET_ERRORS,

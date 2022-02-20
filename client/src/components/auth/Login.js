@@ -47,11 +47,15 @@ class Login extends Component {
 
   render(){
     const {errors, email, password} = this.state
+    const {history} = this.props
+    const {location} = history
+    const {state} = location
     return(
      <div className='login'>
        <div className='container'>
          <div className='row'>
            <div className='col-md-8 m-auto'>
+             {state && <div style={{padding: '5px'}} className='alert-success text-center'>{state.message}</div>}
              <h1 className='display-4 text-center'>Log In</h1>
              <p className='lead text-center'> Sign in to your account</p>
              <form noValidate onSubmit={this.onSubmit}>
