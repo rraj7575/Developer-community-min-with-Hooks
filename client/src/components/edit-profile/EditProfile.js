@@ -40,8 +40,9 @@ class CreateProfile extends Component {
       this.setState({errors: nextProps.errors})
     }
     if (nextProps.profile.profile) {
-      const {profile} = nextProps.profile
-      // const profile = nextProps.profile.profile
+      // const {skills} = nextProps.profile
+      const profile = {...nextProps.profile.profile}
+      console.log('profile', profile)
       const skillsCSV = profile.skills.join(',')
       profile.company = !isEmpty(profile.company) ? profile.company : ''
       profile.website = !isEmpty(profile.website) ? profile.website : ''
@@ -55,6 +56,21 @@ class CreateProfile extends Component {
       profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : ''
       profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : ''
       profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : ''
+
+
+      // profile.company = !isEmpty(profile.company) ? profile.company : ''
+      // profile.website = !isEmpty(profile.website) ? profile.website : ''
+      // profile.status = !isEmpty(profile.status) ? profile.status : ''
+      // profile.location = !isEmpty(profile.location) ? profile.location : ''
+      // profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : ''
+      // profile.bio = !isEmpty(profile.bio) ? profile.bio : ''
+      // profile.social = !isEmpty(profile.social) ? profile.social : {}
+      // profile.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : ''
+      // profile.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : ''
+      // profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : ''
+      // profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : ''
+      // profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : ''
+
       this.setState({
         handle: profile.handle,
         company: profile.company,

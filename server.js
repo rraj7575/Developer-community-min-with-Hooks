@@ -9,7 +9,7 @@ const path = require('path')
 const app = express()
 const port = process.env.PORT || 6000;
 const server = app.listen(port, () => console.log(`Server running on port ${port}`))
-const client = require('socket.io').listen(server);
+// const client = require('socket.io').listen(server);
 const Chat = require('./models/Chat')
 const Post = require('./models/Post')
 

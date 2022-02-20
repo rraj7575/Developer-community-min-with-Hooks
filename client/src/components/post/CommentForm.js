@@ -22,12 +22,13 @@ class CommentForm extends Component {
   onSubmit = (e) => {
     e.preventDefault()
     const { user } = this.props.auth
+    const {name, avatar} = user
     const { text } = this.state
     const { postId } = this.props
     const newComment = {
-      text: text,
-      name: user.name,
-      avatar : user.avatar
+      text,
+      name,
+      avatar,
     }
     this.props.onAddComment(postId, newComment)
     this.setState({
@@ -36,8 +37,9 @@ class CommentForm extends Component {
   }
 
   onChange = (e) => {
+    const {name, value} = e.target
     this.setState({
-      [e.target.name] : e.target.value
+      [name] : value
     })
   }
 

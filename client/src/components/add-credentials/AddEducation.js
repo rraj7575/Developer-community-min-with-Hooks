@@ -111,19 +111,19 @@ class AddEducation extends Component {
                 error={errors.location}
                 disabled={disabled}
               />
-              <div className="form-check mb-4">
-                <input
-                  type="checkbox"
-                  name='current'
-                  className="form-check-input"
-                  value={current}
-                  checked={current}
-                  onChange={this.onCheck}
-                />
-                <label htmlFor='from' className="form-check-label">
-                  Current job
-                </label>
-              </div>
+              {/*<div className="form-check mb-4">*/}
+                {/*<input*/}
+                  {/*type="checkbox"*/}
+                  {/*name='current'*/}
+                  {/*className="form-check-input"*/}
+                  {/*value={current}*/}
+                  {/*checked={current}*/}
+                  {/*onChange={this.onCheck}*/}
+                {/*/>*/}
+                {/*<label htmlFor='from' className="form-check-label">*/}
+                  {/*Current job*/}
+                {/*</label>*/}
+              {/*</div>*/}
               <TextAreaFieldGroup
                 placeholder='Program Description'
                 name='description'

@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 import jwt_decode from "jwt-decode";
-const socketUrl = 'http://localhost:6000'
-const socket = io(socketUrl)
+// const socketUrl = 'http://localhost:6000'
+// const socket = io(socketUrl)
 
 
 class Chat extends Component {
@@ -16,11 +16,11 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    this.initSocket()
-    const self = this
-    socket.emit('previousChat',{
-      user: self.getCurrentUser()
-    })
+    // this.initSocket()
+    // const self = this
+    // socket.emit('previousChat',{
+    //   user: self.getCurrentUser()
+    // })
   }
 
   componentDidUpdate() {
@@ -31,19 +31,19 @@ class Chat extends Component {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" });
   }
 
-  initSocket = () => {
-    const self = this
-    socket.on('connect', ()=> {
-      console.log('Socket connected')
-    })
-
-    socket.on('output', function (curData) {
-      if (curData) {
-        const data = [...self.state.data, ...curData]
-        self.setState({data})
-      }
-    })
-  }
+  // initSocket = () => {
+  //   const self = this
+  //   socket.on('connect', ()=> {
+  //     console.log('Socket connected')
+  //   })
+  //
+  //   socket.on('output', function (curData) {
+  //     if (curData) {
+  //       const data = [...self.state.data, ...curData]
+  //       self.setState({data})
+  //     }
+  //   })
+  // }
 
 
   onChange = (e) => {
@@ -56,10 +56,10 @@ class Chat extends Component {
     const self = this
     const { msg } = this.state
     this.setState({msg: ''})
-    socket.emit('input',{
-      msg,
-      user: self.getCurrentUser()
-    })
+    // socket.emit('input',{
+    //   msg,
+    //   user: self.getCurrentUser()
+    // })
   }
 
   getChat = (data) => {
