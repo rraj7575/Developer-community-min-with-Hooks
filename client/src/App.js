@@ -4,7 +4,7 @@ import './App.css';
 import Loadable from 'react-loadable'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import Landing from './components/layout/Landing'
+import Landing from './components/layout/Landing2'
 import {Provider} from 'react-redux'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from './utils/setAuthToken'
@@ -48,8 +48,6 @@ class App extends Component {
                   <Route path='/profile/:handle' exact
                          render={ (props) => <AsyncProfile {...props} /> } />
                   <PrivateRoute path='/dashboard' component={AsyncDashboard} />
-                  <PrivateRoute path='/feed' component={AsyncPosts} />
-                  <PrivateRoute path='/post/:id' component={AsyncPost} />
                 </Switch>
               </div>
               <Footer/>
@@ -63,9 +61,7 @@ const AsyncRegister = Loadable(doLoad(() => import('./components/auth/Register2'
 const AsyncLogin = Loadable(doLoad(() => import('./components/auth/Login2')))
 const AsyncProfiles = Loadable(doLoad(() => import('./components/profiles/Profiles2')))
 const AsyncProfile = Loadable(doLoad(() => import('./components/profile/Profile')))
-const AsyncDashboard = Loadable(doLoad(() => import('./components/dashboard/Dashboard')))
-const AsyncPosts = Loadable(doLoad(() => import('./components/posts/Posts')))
-const AsyncPost = Loadable(doLoad(() => import('./components/post/Post')))
+const AsyncDashboard = Loadable(doLoad(() => import('./components/dashboard/Dashboard2')))
 
 
 

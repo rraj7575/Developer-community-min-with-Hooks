@@ -24,16 +24,6 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className= 'nav-item'>
-          <Link className='nav-link' to="/chat" >
-            Chat
-          </Link>
-        </li>
-        <li className= 'nav-item'>
-          <Link className='nav-link' to="/feed" >
-            Post Feed
-          </Link>
-        </li>
-        <li className= 'nav-item'>
           <a href='' onClick={this.onLogout} className='nav-link' >
             <img src={user.avatar} alt={user.name} className='rounded-circle' style={{marginRight: '5px', width: '25px'}}/>
             Logout
@@ -59,9 +49,6 @@ class Navbar extends Component {
       <nav className='navbar navbar-expand-sm navbar-dark bg-dark mb-4'>
         <div className="container">
           <Link className='navbar-brand' to='/'> Home</Link>
-          {/*<button className='navbar-toggle' data-toggle="collapse" data-target="#mobile-nav">*/}
-            {/*<span className='navbar-toggler-icon'> </span>*/}
-          {/*</button>*/}
           <div className='collapse navbar-collapse' id='mobile-nav'>
             <ul className='navbar-nav mr-auto'>
               <li className='nav-item'>
