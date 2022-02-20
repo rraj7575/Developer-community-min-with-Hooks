@@ -13,6 +13,8 @@ export default function (state = initialState, action) {
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload
       }
+    case 'DO_NOTHING':
+      return state
     default:
       return state
   }
