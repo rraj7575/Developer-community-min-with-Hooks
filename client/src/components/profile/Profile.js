@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom'
 import Spinner from './../common/Spinner'
 import {getProfileByHandle} from "../../actions/profileAction";
 
-
 class Profile extends Component {
 
     componentDidMount() {

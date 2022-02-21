@@ -5,7 +5,6 @@ import {getProfile} from "../../actions/profileAction";
 
 const Dashboard = ({
                        getCurrentProfile,
-                       deleteAccount,
                        auth: {user},
                    }) => {
     useEffect(() => {
@@ -24,9 +23,7 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
-    deleteAccount: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
-    profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({

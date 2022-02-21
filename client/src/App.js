@@ -16,14 +16,6 @@ import {doLoad} from "./utils/LoadingComponent";
 
 if (localStorage.jwtToken) {
   const decodedData = jwt_decode(localStorage.jwtToken)
-  const currentTime = Date.now()/1000
-  if (decodedData.exp < currentTime) {
-    store.dispatch(setCurrentUser({}))
-    localStorage.removeItem('jwtToken')
-    setAuthToken(false)
-    store.dispatch(clearCurrentProfile())
-    window.location.href = '/login'
-  }
   console.log('Setting tokens.......')
   setAuthToken(localStorage.jwtToken)
   store.dispatch(setCurrentUser(decodedData))

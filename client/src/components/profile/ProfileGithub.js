@@ -9,7 +9,6 @@ class ProfileGithub extends Component {
             count: 5,
             sort: 'created: asc',
             repos: []
-
         }
     }
 
